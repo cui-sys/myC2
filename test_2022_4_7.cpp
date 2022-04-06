@@ -6,35 +6,35 @@ using namespace std;
 class Person
 {
 private:
-    char m_name[32];//¶¨ÒåÀàµÄÊ±ºò²»Òª¸ø³ÉÔ±³õÊ¼»¯
+    char m_name[32];//å®šä¹‰ç±»çš„æ—¶å€™ä¸è¦ç»™æˆå‘˜åˆå§‹åŒ–
     int m_age;
 public:
-    //³õÊ¼»¯º¯Êı
+    //åˆå§‹åŒ–å‡½æ•°
     void initPerson(char* name, int age)
     {
         if(name != NULL)
             strcpy(m_name,name);
         else
-            cout<<"Çë³õÊ¼»¯ĞÕÃû"<<endl;
+            cout<<"è¯·åˆå§‹åŒ–å§“å"<<endl;
         if(age > 0 && age < 100)
             m_age = age;
         else
-            cout<<"ÇëÖØĞÂ³õÊ¼»¯ÄêÁä"<<endl;
+            cout<<"è¯·é‡æ–°åˆå§‹åŒ–å¹´é¾„"<<endl;
     }
-    //¶Ô³ÉÔ± m_name ½øĞĞĞ´²Ù×÷
+    //å¯¹æˆå‘˜ m_name è¿›è¡Œå†™æ“ä½œ
     void setName(char* name)
     {
         if(name != NULL)
             strcpy(m_name,name);
         else
-            cout<<"Çë³õÊ¼»¯ĞÕÃû"<<endl;
+            cout<<"è¯·åˆå§‹åŒ–å§“å"<<endl;
     }
-    //¶Ô³ÉÔ± m_name ½øĞĞ¶Á²Ù×÷
+    //å¯¹æˆå‘˜ m_name è¿›è¡Œè¯»æ“ä½œ
     char* getName(void)
     {
         return m_name;
     }
-    //¶Ô³ÉÔ± m_age ½øĞĞĞ´²Ù×÷
+    //å¯¹æˆå‘˜ m_age è¿›è¡Œå†™æ“ä½œ
     void setAge(int age)
     {
         if(age > 0 && age < 100)
@@ -43,42 +43,42 @@ public:
         }
         else
         {
-            cout<<"¸³ÖµÎŞĞ§"<<endl;
+            cout<<"èµ‹å€¼æ— æ•ˆ"<<endl;
         }
     }
-    //¶Ô³ÉÔ± m_age ½øĞĞ¶Á²Ù×÷
+    //å¯¹æˆå‘˜ m_age è¿›è¡Œè¯»æ“ä½œ
     int getAge(void)
     {
         return m_age;
     }
     void showPerson(void)
     {
-        cout<<"ĞÕÃû:"<<m_name<<" ÄêÁä:"<<m_age<<endl;
+        cout<<"å§“å:"<<m_name<<" å¹´é¾„:"<<m_age<<endl;
     }
 
 };
 void test()
 {
-    //Í¨¹ıÀà ÊµÀı»¯ Ò»¸ö¶ÔÏó £¨ÓÃPerson¶¨ÒåÒ»¸ö±äÁ¿£©
+    //é€šè¿‡ç±» å®ä¾‹åŒ– ä¸€ä¸ªå¯¹è±¡ ï¼ˆç”¨Personå®šä¹‰ä¸€ä¸ªå˜é‡ï¼‰
     Person lucy;
-    lucy.initPerson("ÀÏÍõ",28);
+    lucy.initPerson("è€ç‹",28);
     lucy.showPerson();
     lucy.setName("lucy");
     lucy.setAge(13);
-    cout<<"ĞÕÃû£º"<<lucy.getName()<<endl;
-    cout<<"ÄêÁä£º"<<lucy.getAge()<<endl;
+    cout<<"å§“åï¼š"<<lucy.getName()<<endl;
+    cout<<"å¹´é¾„ï¼š"<<lucy.getAge()<<endl;
 
 }
 
-//Éè¼ÆÒ»¸ö³¤·½ÌåµÄÀà
+//è®¾è®¡ä¸€ä¸ªé•¿æ–¹ä½“çš„ç±»
 class Cube
 {
 private:
     int m_L;
     int m_W;
     int m_H;
-public://Éè¼Æ¹¦ÄÜÒªµ¥Ò»
-    //m_L m_W m_H Ğ´²Ù×÷
+public://è®¾è®¡åŠŸèƒ½è¦å•ä¸€
+    //m_L m_W m_H å†™æ“ä½œ
     void set_L(int l)
      {
        m_L = l;
@@ -91,7 +91,7 @@ public://Éè¼Æ¹¦ÄÜÒªµ¥Ò»
      {
        m_H = h;
      }
-     //m_L m_W m_H ¶Á²Ù×÷
+     //m_L m_W m_H è¯»æ“ä½œ
     int get_L(void)const
     {
         return m_L;
@@ -104,19 +104,19 @@ public://Éè¼Æ¹¦ÄÜÒªµ¥Ò»
     {
         return m_H;
     }
-    //¼ÆËãÃæ»ı
+    //è®¡ç®—é¢ç§¯
     int get_S(void)const
     {
         return 2*(m_L * m_W + m_L * m_H + m_W * m_H);
     }
 
-    //¼ÆËãÌå»ı
+    //è®¡ç®—ä½“ç§¯
     int get_V(void)const
     {
         return m_L * m_W * m_H;
     }
-    //³ÉÔ±º¯ÊıÅĞ¶Ï
-    bool myCompareCube2(Cube &ob)//ÀàµÄÄÚ²¿ Ã»ÓĞÈ¨ÏŞÖ®·Ö
+    //æˆå‘˜å‡½æ•°åˆ¤æ–­
+    bool myCompareCube2(Cube &ob)//ç±»çš„å†…éƒ¨ æ²¡æœ‰æƒé™ä¹‹åˆ†
     {
         if(m_L == ob.m_L && m_W == ob.m_W && m_H == ob.m_H)
         {
@@ -132,7 +132,7 @@ public://Éè¼Æ¹¦ÄÜÒªµ¥Ò»
 };
 bool myCompareCube1(const Cube &c1, const Cube &c2)
 {
-    //ÀàµÄÍâ²¿
+    //ç±»çš„å¤–éƒ¨
     if(c1.get_L() == c2.get_L() && c1.get_W() == c2.get_W() && c1.get_H() == c2.get_H())
     {
         return true;
@@ -149,16 +149,16 @@ void test()
     cube1.set_W(10);
     cube1.set_H(10);
     /*int V = cube.get_V();
-    cout << "Ìå»ı£º"<< V << endl;*/
-    cout << "Ìå»ı:"<< cube1.get_V() << endl;
-    cout << "Ãæ»ı:"<< cube1.get_S() << endl;
+    cout << "ä½“ç§¯ï¼š"<< V << endl;*/
+    cout << "ä½“ç§¯:"<< cube1.get_V() << endl;
+    cout << "é¢ç§¯:"<< cube1.get_S() << endl;
 
     Cube cube2;
     cube2.set_L(10);
     cube2.set_W(20);
     cube2.set_H(10);
 
-    //È«¾Öº¯ÊıÅĞ¶Ï
+    //å…¨å±€å‡½æ•°åˆ¤æ–­
     if(myCompareCube1(cube1, cube2) == true)
     {
         cout<<"YES"<<endl;
@@ -172,19 +172,19 @@ void test()
     cube3.set_L(10);
     cube3.set_W(10);
     cube3.set_H(10);
-    //³ÉÔ±º¯ÊıÅĞ¶Ï
+    //æˆå‘˜å‡½æ•°åˆ¤æ–­
     if(cube3.myCompareCube2(cube1) == true)
     {
-        cout<<"ÏàÍ¬"<<endl;
+        cout<<"ç›¸åŒ"<<endl;
     }
     else
     {
-        cout<<"²»Í¬"<<endl;
+        cout<<"ä¸åŒ"<<endl;
     }
 }
 #endif
-//Éè¼ÆÒ»¸öÔ²ĞÎÀàºÍÒ»¸öµãÀà - µãºÍÔ²µÄ¹ØÏµ
-//µãµÄÀà
+//è®¾è®¡ä¸€ä¸ªåœ†å½¢ç±»å’Œä¸€ä¸ªç‚¹ç±» - ç‚¹å’Œåœ†çš„å…³ç³»
+//ç‚¹çš„ç±»
 class Point
 {
 private:
@@ -208,11 +208,11 @@ public:
         return m_y;
     }
 };
-//Ô²µÄÀà
+//åœ†çš„ç±»
 class Circle
 {
 private:
-    Point m_p;//Ô²ĞÄ
+    Point m_p;//åœ†å¿ƒ
     int m_r;
 public:
     void steR(int r)
@@ -230,40 +230,40 @@ public:
     }
     Point getP(void)
     {
-        return m_p;//µÃµ½Ô²ĞÄ
+        return m_p;//å¾—åˆ°åœ†å¿ƒ
     }
-    //ÅĞ¶Ï µãÔÚÔ²µÄÎ»ÖÃ
+    //åˆ¤æ–­ ç‚¹åœ¨åœ†çš„ä½ç½®
     void isPointOnCircle(Point &ob)
     {
-        //µãµ½Ô²ĞÄµÄ¾àÀë
+        //ç‚¹åˆ°åœ†å¿ƒçš„è·ç¦»
         int distance = (m_p.getX() - ob.getX()) * (m_p.getX() - ob.getX()) + (m_p.getY() - ob.getY()) * (m_p.getY() - ob.getY());
         if(distance < m_r * m_r)
         {
-            cout<<"µãÔÚÔ²ÄÚ"<<endl;
+            cout<<"ç‚¹åœ¨åœ†å†…"<<endl;
         }
         else if(distance == m_r * m_r)
         {
-            cout<<"µãÔÚÔ²ÉÏ"<<endl;
+            cout<<"ç‚¹åœ¨åœ†ä¸Š"<<endl;
         }
         else
         {
-            cout<<"µãÔÚÔ²Íâ"<<endl;
+            cout<<"ç‚¹åœ¨åœ†å¤–"<<endl;
         }
     }
 };
 void test()
 {
-    //ÊµÀı»¯Ò»¸öµã¶ÔÏó
+    //å®ä¾‹åŒ–ä¸€ä¸ªç‚¹å¯¹è±¡
     Point point;
     point.setX(10);
     point.setY(10);
 
-    //ÊµÀı»¯Ò»¸öÔ²¶ÔÏó
+    //å®ä¾‹åŒ–ä¸€ä¸ªåœ†å¯¹è±¡
     Circle circle;
-    circle.steR(30);//°ë¾¶
-    circle.setP(40,40);//Ô²ĞÄ
+    circle.steR(30);//åŠå¾„
+    circle.setP(40,40);//åœ†å¿ƒ
 
-    //ÅĞ¶Ï µã Óë Ô² µÄ¹ØÏµ
+    //åˆ¤æ–­ ç‚¹ ä¸ åœ† çš„å…³ç³»
     circle.isPointOnCircle(point);
 }
 
